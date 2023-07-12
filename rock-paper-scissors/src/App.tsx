@@ -5,20 +5,39 @@ import Paper from './Paper.png';
 import Scissors from './Scissors.png';
 
 class App extends React.Component {
-  state = { player1Image: Rock, player2Image: Rock }
+  images = [Rock, Paper, Scissors];
+  state = { player1Image: this.images[0], player2Image: this.images[0] };
+
 
   getRandomImage = () => {
-    const image = [Rock, Paper, Scissors];
-    const randomNum = Math.floor(Math.random() * 3);
-    return image[randomNum];
+    const images = [Rock, Paper, Scissors];
+    const randomNum = Math.floor(Math.random() * images.length);
+    return images[randomNum];
+  }
+
+  handleRandom = (player: 'player1Image' | 'player2Image') => {
+    let counter = 0;
+    let imageIndex = 0;
+    const totalDuration = 3000;
+    const delay = totalDuration / (this.images.length * 10);
+
+    const intervalId = setInterval(() => {
+      this.setState({ [player]: this.images[imageIndex] });
+      imageIndex = (imageIndex + 1) % this.images.length;
+      counter += delay;
+      if (counter >= totalDuration) {
+        clearInterval(intervalId);
+        this.setState({ [player]: this.getRandomImage() });
+      }
+    }, delay);
   }
 
   handleRandom1 = () => {
-    this.setState({ player1Image: this.getRandomImage() });
+    this.handleRandom('player1Image');
   }
 
   handleRandom2 = () => {
-    this.setState({ player2Image: this.getRandomImage() });
+    this.handleRandom('player2Image');
   }
   
   render() {
