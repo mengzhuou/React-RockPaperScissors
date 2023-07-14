@@ -13,14 +13,14 @@
   }
 
   .player-section {
-    height: 60% !important;
+    height: 60%;
     margin-bottom: 60%;
     margin-left: 7%;
     text-align: center;
   }
   
   .player-image-container{
-    height: 150px !important;
+    height: 150px;
     width: 150px;
   }
 }
@@ -43,6 +43,9 @@
   align-items: center;
   justify-content: center;
   margin: 20px 0;
+  height: 200px; /* Adjust as necessary */
+  width: 200px; /* Adjust as necessary */
+  overflow: hidden;
 }
 
 .player-image {
