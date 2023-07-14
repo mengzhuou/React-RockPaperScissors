@@ -19,19 +19,24 @@ class App extends React.Component {
     let counter = 0;
     let imageIndex = 0;
     const totalDuration = 3000;
-    const delay = totalDuration / (this.images.length * 10);
-
-    const intervalId = setInterval(() => {
-      this.setState({ [player]: this.images[imageIndex] });
+    let delay = totalDuration / (this.images.length * 20);  // Decrease the initial delay for faster start
+  
+    const spin = () => {
+      this.setState({ [player]: this.images[imageIndex] }); //[player] will be replaced by either player1Image or player2Image
       imageIndex = (imageIndex + 1) % this.images.length;
       counter += delay;
+      
       if (counter >= totalDuration) {
-        clearInterval(intervalId);
         this.setState({ [player]: this.getRandomImage() });
+      } else {
+        delay += delay * 0.1; // Increase delay by 10% with each iteration
+        setTimeout(spin, delay);
       }
-    }, delay);
+    };
+  
+    setTimeout(spin, delay);
   }
-
+  
   handleRandom1 = () => {
     this.handleRandom('player1Image');
   }
