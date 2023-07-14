@@ -54,15 +54,24 @@ class App extends React.Component {
           <div className="player-image-container">
             <img className="player-image" src={player1Image} alt="Player 1" />
           </div>
-          <button className="random-button" onClick={this.handleRandom1}>Random</button>
+          <button className="random-button" onClick={this.handleRandom1}>Start</button>
         </div>
         <div className="player-section">
           <h2>Player 2</h2>
           <div className="player-image-container">
             <img className="player-image" src={player2Image} alt="Player 2" />
           </div>
-          <button className="random-button" onClick={this.handleRandom2}>Random</button>
+          <button className="random-button" onClick={this.handleRandom2}>Start</button>
         </div>
+
+        <footer>
+          <div className="footer-text">
+            Designed with &#10084; by Mengzhu Ou 
+          </div>
+          <div className="footer-find-me">
+            <a href="https://mengzhuou.github.io/">Find Me</a>
+          </div>
+        </footer>
       </div>
     );
   }
