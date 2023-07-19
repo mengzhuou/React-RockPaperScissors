@@ -49,10 +49,6 @@ class App extends React.Component {
     const { player1Image, player2Image } = this.state;
     return (
       <div className="App">
-        <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6038499387704621"
-     crossOrigin="anonymous"></script>
-        </head>
         <div className="player-section">
           <h2>Player 1</h2>
           <div className="player-image-container">
