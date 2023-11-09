@@ -1,2 +1,6 @@
 # React-RockPaperScissors
-Game Link: https://nina-rock-paper-scissors-paywn.ondigitalocean.app/
+
+
+
+https://github.com/mengzhuou/React-RockPaperScissors/assets/71995520/47139256-8dea-4461-a271-9f0bfb763796
+
